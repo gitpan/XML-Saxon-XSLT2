@@ -8,7 +8,7 @@ use IO::Handle;
 use Scalar::Util qw[blessed];
 use XML::LibXML;
 
-our $VERSION = '0.003';
+our $VERSION = '0.004';
 my $classpath;
 
 BEGIN
@@ -20,9 +20,17 @@ BEGIN
 	{
 		$classpath = $path if -e $path;
 	}
+
+	require Inline;
 }
 
-use Inline Java => 'DATA', CLASSPATH=>$classpath;
+sub import
+{
+	my ($class, @args) = @_;
+	shift @args
+		if @args && exists $args[0] && defined $args[0] && $args[0] =~ /^[\d\.\_]{1,10}$/;
+	Inline->import(Java => 'DATA', CLASSPATH=>$classpath, @args);
+}
 
 sub new
 {
@@ -172,8 +180,18 @@ XML::Saxon::XSLT2 - process XSLT 2.0 using Saxon 9.x.
 
 =head1 SYNOPSIS
 
+ use XML::Saxon::XSLT2;
+ 
+ # make sure to open filehandle in right encoding
+ open(my $input, '<:encoding(UTF-8)', 'path/to/xml') or die $!;
+ open(my $xslt, '<:encoding(UTF-8)', 'path/to/xslt') or die $!;
+ 
  my $trans  = XML::Saxon::XSLT2->new($xslt, $baseurl);
  my $output = $trans->transform($input);
+ print $output;
+ 
+ my $output2 = $trans->transform_document($input);
+ my @paragraphs = $output2->getElementsByTagName('p');
 
 =head1 DESCRIPTION
 
@@ -184,6 +202,15 @@ or '/usr/local/share/java/saxon9he.jar'. Future versions should be more
 flexible. The saxon9he.jar file can be found at L<http://saxon.sourceforge.net/> -
 just dowload the latest Java release of Saxon-HE 9.x, open the Zip archive,
 extract saxon9he.jar and save it to one of the two directories above.
+
+=head2 Use Line
+
+ use XML::Saxon::XSLT2;
+
+You can include additional parameters which will be passed straight on to
+Inline::Java, like this:
+
+ use XML::Saxon::XSLT2 EXTRA_JAVA_ARGS => '-Xmx256m';
 
 =head2 Constructor
 
@@ -289,9 +316,13 @@ Please report any bugs to L<http://rt.cpan.org/>.
 
 =head1 SEE ALSO
 
-C<XML::LibXSLT> is probably more reliable, and allows you to define your
+L<XML::LibXSLT> is probably more reliable, and allows you to define your
 own XSLT extension functions. However, the libxslt library that it's based
 on only supports XSLT 1.0.
+
+L<Inline::Java>.
+
+L<http://saxon.sourceforge.net/>.
 
 =head1 AUTHOR
 
@@ -299,7 +330,7 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 =head1 COPYRIGHT
 
-Copyright 2010 Toby Inkster
+Copyright 2010-2011 Toby Inkster
 
 This library is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
@@ -521,3 +552,4 @@ public class Transformer
 		return sw.toString();
 	}
 }
+
