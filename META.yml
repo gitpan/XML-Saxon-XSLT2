@@ -1,5 +1,5 @@
 ---
-abstract: 'process XSLT 2.0 using Saxon 9.x.'
+abstract: 'process XSLT 2.0 using Saxon 9.x'
 author:
   - 'Toby Inkster <tobyink@cpan.org>'
 build_requires:
@@ -8,16 +8,22 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: 'Module::Install version 1.00'
+generated_by: 'Module::Install version 1.02'
+keywords:
+  - Java
+  - 'XSL transformations'
+  - XSLT
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
+module_name: XML::Saxon::XSLT2
 name: XML-Saxon-XSLT2
 no_index:
   directory:
     - inc
     - t
+    - xt
 requires:
   Carp: 1.00
   IO::Handle: 0
@@ -28,7 +34,7 @@ requires:
   perl: 5.8.0
 resources:
   bugtracker: http://rt.cpan.org/Dist/Display.html?Queue=XML-Saxon-XSLT2
-  homepage: http://search.cpan.org/dist/XML-Saxon-XSLT2/
+  homepage: https://metacpan.org/release/XML-Saxon-XSLT2
   license: http://dev.perl.org/licenses/
-  repository: http://goddamn.co.uk/viewvc/perlmods/XML-Saxon-XSLT2/
-version: 0.004
+  repository: http://goddamn.co.uk/svn-web/perlmods/browse/XML-Saxon-XSLT2/
+version: 0.005

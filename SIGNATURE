@@ -14,35 +14,36 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 1d0b64bfbdeb9de06ade89ccce41ed2cee1c254d Changes
-SHA1 3b49904e9cb3cffecc3c0bdf4c9208b84ea59e75 Changes.ttl
-SHA1 4f403dafb0fc7400ff92f3541c36f0b4e4d20547 Changes.xml
-SHA1 4d1169eb4386cd5d094d560af912a1d1bb567ea5 MANIFEST
-SHA1 d1fae04dc75cbb6a74c443ff0cb894eb615a4fb6 MANIFEST.SKIP
-SHA1 a6b17b3fb7a18ffb0e52f0dcf799e453690d499b META.yml
-SHA1 a2705dc8bca8f4cc2a4a93bf5c9ee07b9b2c5f7e Makefile.PL
+SHA1 54c9266b3d65f17e452036d742ab91ef361a503a Changes
+SHA1 f3296a09eb07898f3ba6dd0ece615dafc1b57e16 LICENSE
+SHA1 eb0965e4f47157b8860f4fb910b6ae99aaeb636e MANIFEST
+SHA1 bb1c89ce29b69f9a11591acb9a067d4cb5ac5bbf META.yml
+SHA1 985024092438598e09d5b47b7eda4600fcf29bab Makefile.PL
 SHA1 3d98927e82f0badd70fb3d3587dd88d426ba96a1 README
-SHA1 20c73697e1713638140c719d8eaa19a275ed43a5 inc/Module/AutoInstall.pm
-SHA1 7305dbe2904416e28decb05396988a5d51d578be inc/Module/Install.pm
-SHA1 ca13d9875e1249f6e84f7070be8152c34837955e inc/Module/Install/AutoInstall.pm
-SHA1 129960509127732258570c122042bc48615222e1 inc/Module/Install/Base.pm
-SHA1 cf3356ed9a5bd2f732527ef9e7bc5ef4458c8a93 inc/Module/Install/Can.pm
-SHA1 de189984fc99741cc060d1964f513e45bf6d5c74 inc/Module/Install/DOAPChangeSets.pm
-SHA1 bf0a3e1977effc2832d7a813a76dce3f31b437b6 inc/Module/Install/Fetch.pm
-SHA1 b501b0df59a5cd235cca473889f82c3d3429f39e inc/Module/Install/Include.pm
-SHA1 b721c93ca5bc9a6aa863b49af15f1b1de6125935 inc/Module/Install/Makefile.pm
-SHA1 026cc0551a0ad399d195e395b46bdf842e115192 inc/Module/Install/Metadata.pm
-SHA1 a615bb050ca0b2d79bfa0224addcb83019a53b09 inc/Module/Install/ReadmeFromPod.pm
-SHA1 5457015ea5a50e93465bf2dafa29feebd547f85b inc/Module/Install/Win32.pm
-SHA1 051e7fa8063908befa3440508d0584a2497b97db inc/Module/Install/WriteAll.pm
-SHA1 1e6399a0585817abef500c34fce676fb9b0545f0 inc/Test/Signature.pm
-SHA1 d21fe5d0d6cdc7cecbdaed08ecede48244df9984 lib/XML/Saxon/XSLT2.pm
-SHA1 bb128dce2db8ad397dbeb957d79d084cc5d2391a t/00sig.t
+SHA1 09ab0d432011e93da592b52025b2f966073b4998 TODO
+SHA1 5d94bc10deff1dd74e4bc5dfa6fc015e39271f15 inc/Module/AutoInstall.pm
+SHA1 40106479d4e07f379cb82ca1d69fca92e3a40f47 inc/Module/Install.pm
+SHA1 34a24a530ecf0365cc02e4150b06c9bed702a441 inc/Module/Install/AutoInstall.pm
+SHA1 c04f94f91fa97b9f8cfb5a36071098ab0e6c78e3 inc/Module/Install/AutoManifest.pm
+SHA1 ae8aa01a73cb83da31c39e8eed1120c59cb530a1 inc/Module/Install/Base.pm
+SHA1 5c87d2d0e2c08b5173259006c88ad81c24303f9d inc/Module/Install/Can.pm
+SHA1 98daf9d8c50b4b7e8988cf1fa2b86044ad219533 inc/Module/Install/Fetch.pm
+SHA1 f3e008113f7f49b0625083b6cc358a312854f613 inc/Module/Install/Include.pm
+SHA1 e67589fcbacdda6c98ff34d8e26a004ab0467bdc inc/Module/Install/Makefile.pm
+SHA1 209ea405d4ab94475661bb450d0ea042d2ec25b5 inc/Module/Install/Metadata.pm
+SHA1 340cb74b460e3bbbd121ca38d317c562ed783a2d inc/Module/Install/Package.pm
+SHA1 1326052d1df1065debee74f9d8583a734b9b3d00 inc/Module/Install/Win32.pm
+SHA1 bb607f3715c40fc3bc1c46496587cdb215bc4fa2 inc/Module/Install/WriteAll.pm
+SHA1 59e3340c94ee95c1e443b7a869f97f9f46839fc2 inc/Module/Package.pm
+SHA1 a94d363107a44ce2085a565bff32db431d620d6f lib/XML/Saxon/XSLT2.pm
+SHA1 3493f5e0c3d8c8b05578d5cd1e3305efafc93da2 meta/changes.ttl
+SHA1 042331cb68ea538ed0518ea4b864ab3a46455285 meta/doap.ttl
+SHA1 8b55b916b08f1def4ae589eab24fbae4c8b4d461 meta/makefile.ttl
 SHA1 2b26350f62a9a0304a793737843c885de6cdd15b t/01basic.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.10 (GNU/Linux)
 
-iEYEARECAAYFAk1e/oEACgkQzr+BKGoqfTkhCQCfTKtykVepXuV8gsTgV5xQ9ejj
-/IEAniG7oeZ/XmYauJ+re5IbRWnaHNLM
-=H5xy
+iEYEARECAAYFAk6KKVEACgkQzr+BKGoqfTlDJwCgrwLDKDtXzI48H/adKc1RimG1
+63AAn2cSMlZnRrhYaRhVpQ6RawqEl6Ii
+=ahJF
 -----END PGP SIGNATURE-----
