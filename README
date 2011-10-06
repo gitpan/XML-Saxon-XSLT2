@@ -71,16 +71,13 @@ DESCRIPTION
         $doc may be a string, a file handle or an XML::LibXML::Document.
 
         $output_method may be 'xml', 'xhtml', 'html' or 'text' to override
-        the XSLT output method.
+        the XSLT output method; or 'default' to use the output method
+        specified in the XSLT file. 'default' is the default. In the current
+        release, 'default' is also broken. :-(
 
     "$trans->transform_document($doc, [$output_method])"
-        Run a transformation, returning the output as an
+        As per <transform>, but returns the output as an
         XML::LibXML::Document.
-
-        $doc may be a string, a file handle or an XML::LibXML::Document.
-
-        $output_method may be 'xml', 'xhtml', 'html' or 'text' to override
-        the XSLT output method.
 
         This method is slower than "transform".
 
