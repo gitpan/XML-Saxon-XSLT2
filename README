@@ -26,7 +26,7 @@ DESCRIPTION
     release of Saxon-HE 9.x, open the Zip archive, extract saxon9he.jar and
     save it to one of the two directories above.
 
-  Use Line
+  Import
      use XML::Saxon::XSLT2;
 
     You can include additional parameters which will be passed straight on
@@ -34,12 +34,18 @@ DESCRIPTION
 
      use XML::Saxon::XSLT2 EXTRA_JAVA_ARGS => '-Xmx256m';
 
+    The "import" function *must* be called. If you load this module without
+    importing it, it will not work. (Don't worry, it won't pollute your
+    namespace.)
+
   Constructor
     "XML::Saxon::XSLT2->new($xslt, [$baseurl])"
         Creates a new transformation. $xslt may be a string, a file handle
         or an XML::LibXML::Document. $baseurl is an optional base URL for
         resolving relative URL references in, for instance, <xsl:import>
         links. Otherwise, the current directory is assumed to be the base.
+        (For base URIs which are filesystem directories, remember to include
+        the trailing slash.)
 
   Methods
     "$trans->parameters($key=>$value, $key2=>$value2, ...)"
@@ -54,12 +60,12 @@ DESCRIPTION
         second the value. For example:
 
          $trans->parameters(
-            now           => DateTime->now,
+            now             => DateTime->now,
             madrid_is_capital_of_spain => [ boolean => 1 ],
-            price_of_fish => [ decimal => '1.99' ],
-            my_link       => URI->new('http://example.com/'),
-            your_link     => [ uri => 'http://example.net/' ],
-            );
+            price_of_fish   => [ decimal => '1.99' ],
+            my_link         => URI->new('http://example.com/'),
+            your_link       => [ uri => 'http://example.net/' ],
+         );
 
         The following types are supported via the arrayref notation: float,
         double, long (alias int, integer), decimal, bool (alias boolean),
@@ -73,7 +79,7 @@ DESCRIPTION
         $output_method may be 'xml', 'xhtml', 'html' or 'text' to override
         the XSLT output method; or 'default' to use the output method
         specified in the XSLT file. 'default' is the default. In the current
-        release, 'default' is also broken. :-(
+        release, 'default' is broken. :-(
 
     "$trans->transform_document($doc, [$output_method])"
         As per <transform>, but returns the output as an
@@ -119,11 +125,12 @@ BUGS
     Please report any bugs to <http://rt.cpan.org/>.
 
 SEE ALSO
-    XML::LibXSLT is probably more reliable, and allows you to define your
-    own XSLT extension functions. However, the libxslt library that it's
-    based on only supports XSLT 1.0.
+    XML::LibXSLT is probably more reliable in terms of easy installation on
+    a variety of platforms, and it allows you to define your own XSLT
+    extension functions. However, the libxslt library that it's based on
+    only supports XSLT 1.0.
 
-    Inline::Java.
+    This module uses Inline::Java.
 
     <http://saxon.sourceforge.net/>.
 
@@ -131,7 +138,7 @@ AUTHOR
     Toby Inkster <tobyink@cpan.org>.
 
 COPYRIGHT
-    Copyright 2010-2011 Toby Inkster
+    Copyright 2010-2012 Toby Inkster
 
     This library is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.
