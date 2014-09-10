@@ -16,48 +16,47 @@ SYNOPSIS
      my @paragraphs = $output2->getElementsByTagName('p');
 
 DESCRIPTION
-    This module implements XSLT 1.0 and 2.0 using Saxon 9.x via
-    Inline::Java.
+    This module implements XSLT 1.0 and 2.0 using Saxon 9.x via Inline::Java.
 
-    It expects Saxon to be installed in either
-    '/usr/share/java/saxon9he.jar' or '/usr/local/share/java/saxon9he.jar'.
-    Future versions should be more flexible. The saxon9he.jar file can be
-    found at <http://saxon.sourceforge.net/> - just dowload the latest Java
-    release of Saxon-HE 9.x, open the Zip archive, extract saxon9he.jar and
-    save it to one of the two directories above.
+    It expects Saxon to be installed in either '/usr/share/java/saxon9he.jar'
+    or '/usr/local/share/java/saxon9he.jar'. Future versions should be more
+    flexible. The saxon9he.jar file can be found at
+    <http://saxon.sourceforge.net/> - just dowload the latest Java release of
+    Saxon-HE 9.x, open the Zip archive, extract saxon9he.jar and save it to
+    one of the two directories above.
 
   Import
      use XML::Saxon::XSLT2;
 
-    You can include additional parameters which will be passed straight on
-    to Inline::Java, like this:
+    You can include additional parameters which will be passed straight on to
+    Inline::Java, like this:
 
      use XML::Saxon::XSLT2 EXTRA_JAVA_ARGS => '-Xmx256m';
 
-    The "import" function *must* be called. If you load this module without
+    The `import` function *must* be called. If you load this module without
     importing it, it will not work. (Don't worry, it won't pollute your
     namespace.)
 
   Constructor
-    "XML::Saxon::XSLT2->new($xslt, [$baseurl])"
-        Creates a new transformation. $xslt may be a string, a file handle
-        or an XML::LibXML::Document. $baseurl is an optional base URL for
+    `XML::Saxon::XSLT2->new($xslt, [$baseurl])`
+        Creates a new transformation. $xslt may be a string, a file handle or
+        an XML::LibXML::Document. $baseurl is an optional base URL for
         resolving relative URL references in, for instance, <xsl:import>
         links. Otherwise, the current directory is assumed to be the base.
         (For base URIs which are filesystem directories, remember to include
         the trailing slash.)
 
   Methods
-    "$trans->parameters($key=>$value, $key2=>$value2, ...)"
+    `$trans->parameters($key=>$value, $key2=>$value2, ...)`
         Sets transformation parameters prior to running the transformation.
 
         Each key is a parameter name.
 
-        Each value is the parameter value. This may be a scalar, in which
-        case it's treated as an xs:string; a DateTime object, which is
-        treated as an xs:dateTime; a URI object, xs:anyURI; a Math::BigInt,
-        xs:long; or an arrayref where the first element is the type and the
-        second the value. For example:
+        Each value is the parameter value. This may be a scalar, in which case
+        it's treated as an xs:string; a DateTime object, which is treated as
+        an xs:dateTime; a URI object, xs:anyURI; a Math::BigInt, xs:long; or
+        an arrayref where the first element is the type and the second the
+        value. For example:
 
          $trans->parameters(
             now             => DateTime->now,
@@ -71,51 +70,48 @@ DESCRIPTION
         double, long (alias int, integer), decimal, bool (alias boolean),
         string, qname, uri, date, datetime. These are case-insensitive.
 
-    "$trans->transform($doc, [$output_method])"
+    `$trans->transform($doc, [$output_method])`
         Run a transformation, returning the output as a string.
 
         $doc may be a string, a file handle or an XML::LibXML::Document.
 
-        $output_method may be 'xml', 'xhtml', 'html' or 'text' to override
-        the XSLT output method; or 'default' to use the output method
-        specified in the XSLT file. 'default' is the default. In the current
-        release, 'default' is broken. :-(
+        $output_method may be 'xml', 'xhtml', 'html' or 'text' to override the
+        XSLT output method; or 'default' to use the output method specified in
+        the XSLT file. 'default' is the default. In the current release,
+        'default' is broken. :-(
 
-    "$trans->transform_document($doc, [$output_method])"
+    `$trans->transform_document($doc, [$output_method])`
         As per <transform>, but returns the output as an
         XML::LibXML::Document.
 
-        This method is slower than "transform".
+        This method is slower than `transform`.
 
-    "$trans->messages"
+    `$trans->messages`
         Returns a list of string representations of messages output by
         <xsl:message> during the last transformation run.
 
-    "$trans->media_type($default)"
+    `$trans->media_type($default)`
         Returns the output media type for the transformation.
 
         If the transformation doesn't specify an output type, returns the
         default.
 
-    "$trans->doctype_public($default)"
+    `$trans->doctype_public($default)`
         Returns the output DOCTYPE public identifier for the transformation.
 
-        If the transformation doesn't specify a doctype, returns the
-        default.
+        If the transformation doesn't specify a doctype, returns the default.
 
-    "$trans->doctype_system($default)"
+    `$trans->doctype_system($default)`
         Returns the output DOCTYPE system identifier for the transformation.
 
-        If the transformation doesn't specify a doctype, returns the
-        default.
+        If the transformation doesn't specify a doctype, returns the default.
 
-    "$trans->version($default)"
+    `$trans->version($default)`
         Returns the output XML version for the transformation.
 
-        If the transformation doesn't specify a version, returns the
-        default.
+        If the transformation doesn't specify a version, returns the default.
 
-    "$trans->encoding($default)"
+    `$trans->encoding($default)`
         Returns the output encoding for the transformation.
 
         If the transformation doesn't specify an encoding, returns the
@@ -125,10 +121,10 @@ BUGS
     Please report any bugs to <http://rt.cpan.org/>.
 
 SEE ALSO
-    XML::LibXSLT is probably more reliable in terms of easy installation on
-    a variety of platforms, and it allows you to define your own XSLT
-    extension functions. However, the libxslt library that it's based on
-    only supports XSLT 1.0.
+    XML::LibXSLT is probably more reliable in terms of easy installation on a
+    variety of platforms, and it allows you to define your own XSLT extension
+    functions. However, the libxslt library that it's based on only supports
+    XSLT 1.0.
 
     This module uses Inline::Java.
 

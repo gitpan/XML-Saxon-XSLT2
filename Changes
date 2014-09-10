@@ -4,41 +4,54 @@ XML-Saxon-XSLT2
 Created:      2010-07-14
 Home page:    <https://metacpan.org/release/XML-Saxon-XSLT2>
 Bug tracker:  <http://rt.cpan.org/Dist/Display.html?Queue=XML-Saxon-XSLT2>
-Maintainer:   Toby Inkster <mailto:tobyink@cpan.org>
+Maintainer:   Toby Inkster <tobyink@cpan.org>
 
-0.007  2012-09-11  # Shaken, not stirred
+0.008	2014-09-10
 
- - (Documentation) Improve documentation of base URIs.
- - (Documentation) Improve documentation of import function.
- - (Packaging) Drop common::sense dependency.
+ [ Packaging ]
+ - Switch to Dist::Inkt.
 
-0.006  2011-10-06
+0.007	2012-09-11	Shaken, not stirred
 
- - (Documentation) Mention that the 'default' value for the output format
-   of the 'transform' method is broken.
- - (Packaging) Upgrade Module::Package::RDF version.
+ [ Documentation ]
+ - Improve documentation of base URIs.
+   Fixes RT#79463.
+   <https://rt.cpan.org/Ticket/Display.html?id=79463>
+ - Improve documentation of import function.
 
-0.005  2011-10-03
+ [ Packaging ]
+ - Drop common::sense dependency.
 
- - (Bugfix) Change how $classpath is constructed.
+0.006	2011-10-06
 
-0.004  2011-02-18
+ [ Documentation ]
+ - Mention that the 'default' value for the output format of the
+   'transform' method is broken.
 
- - (Addition) Allow parameters to be passed through to Inline::Java from
-   the 'use' line.
+ [ Packaging ]
+ - Upgrade Module::Package::RDF version.
 
-0.003  2010-07-19
+0.005	2011-10-03
 
- - (Addition) Can determine <xsl:output> media-type, doctype-public,
+ [ Bug Fixes ]
+ - Change how $classpath is constructed.
+   Fixes #66276.
+
+0.004	2011-02-18
+
+ - Added: Allow parameters to be passed through to Inline::Java from the
+   'use' line.
+
+0.003	2010-07-19
+
+ - Added: Can determine <xsl:output> media-type, doctype-public,
    doctype-system, encoding and version attributes.
 
-0.002  2010-07-15
+0.002	2010-07-15
 
- - (Addition) Can capture output from <xsl:message>.
- - (Addition) Can specify a base URI in the constructor.
+ - Added: Can capture output from <xsl:message>.
+ - Added: Can specify a base URI in the constructor.
  - No longer default to 'xml' output method, but respect XSLT's specified
    output method.
 
-0.001  2010-07-15  # Original version
-
-
+0.001	2010-07-15	Original version
