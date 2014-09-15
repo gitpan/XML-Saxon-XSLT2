@@ -10,7 +10,7 @@ my $meta = {
                         "TOBYINK <tobyink\@cpan.org>",
                       ],
   "dynamic_config" => 1,
-  "generated_by"   => "Moose::Meta::Class::__ANON__::SERIAL::11 version , CPAN::Meta::Converter version 2.140640",
+  "generated_by"   => "Dist::Inkt::Profile::TOBYINK version 0.021, CPAN::Meta::Converter version 2.140640",
   "keywords"       => ["Java", "XSL transformations", "XSLT"],
   "license"        => ["perl_5"],
   "meta-spec"      => {
@@ -21,11 +21,13 @@ my $meta = {
   "no_index"       => { directory => ["eg", "examples", "inc", "t", "xt"] },
   "prereqs"        => {
                         configure => { requires => { "ExtUtils::MakeMaker" => 6.17 } },
-                        runtime => { requires => { "Inline::Java" => 0, "XML::LibXML" => "1.60" } },
+                        runtime => {
+                          requires => { "Inline::Java" => 0, "perl" => "5.008000", "XML::LibXML" => "1.60" },
+                        },
                         test => { requires => { "Test::More" => 0.61 } },
                       },
   "provides"       => {
-                        "XML::Saxon::XSLT2" => { file => "lib/XML/Saxon/XSLT2.pm", version => 0.008 },
+                        "XML::Saxon::XSLT2" => { file => "lib/XML/Saxon/XSLT2.pm", version => 0.009 },
                       },
   "release_status" => "stable",
   "resources"      => {
@@ -39,9 +41,9 @@ my $meta = {
                                           url  => "git://github.com/tobyink/p5-xml-saxon-xslt2.git",
                                           web  => "https://github.com/tobyink/p5-xml-saxon-xslt2",
                                         },
-                        X_identifier => "http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/project",
+                        x_identifier => "http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/project",
                       },
-  "version"        => 0.008,
+  "version"        => 0.009,
   "x_contributors" => ["TOBYINK"],
 };
 

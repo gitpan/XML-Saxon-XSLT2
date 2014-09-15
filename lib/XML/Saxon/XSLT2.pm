@@ -1,14 +1,18 @@
-package XML::Saxon::XSLT2;
-
 use 5.008;
 use strict;
+use warnings;
+## skip Test::Tabs
+
+package XML::Saxon::XSLT2;
 
 use Carp;
 use IO::Handle;
 use Scalar::Util qw[blessed];
 use XML::LibXML;
 
-our $VERSION = '0.008';
+our $AUTHORITY = 'cpan:TOBYINK';
+our $VERSION   = '0.009';
+
 my $classpath;
 
 BEGIN
@@ -17,8 +21,9 @@ BEGIN
 		/usr/share/java/saxon9he.jar
 		/usr/local/share/java/saxon9he.jar
 		/usr/share/java/saxonb.jar
-		/usr/local/share/java/saxonb.jar))
-	{
+		/usr/local/share/java/saxonb.jar
+		/usr/local/share/java/classes/saxon9he.jar
+	)) {
 		$classpath = $path if -e $path;
 		last if defined $classpath;
 	}
@@ -31,7 +36,7 @@ sub import
 	my ($class, @args) = @_;
 	shift @args
 		if @args && exists $args[0] && defined $args[0] && $args[0] =~ /^[\d\.\_]{1,10}$/;
-	Inline->import(Java => 'DATA', CLASSPATH=>$classpath, @args);
+	Inline->import( Java => 'DATA', CLASSPATH => $classpath, @args );
 }
 
 sub new
@@ -334,7 +339,7 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 =head1 COPYRIGHT
 
-Copyright 2010-2012 Toby Inkster
+Copyright 2010-2012, 2014 Toby Inkster
 
 This library is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.

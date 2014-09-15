@@ -12,7 +12,7 @@
 	a                    doap:Project;
 	dc:contributor       <http://purl.org/NET/cpan-uri/person/tobyink>;
 	doap-bugs:issue      <http://purl.org/NET/cpan-uri/rt/ticket/60584>, <http://purl.org/NET/cpan-uri/rt/ticket/60589>, <http://purl.org/NET/cpan-uri/rt/ticket/60645>, <http://purl.org/NET/cpan-uri/rt/ticket/60646>, <http://purl.org/NET/cpan-uri/rt/ticket/60648>, <http://purl.org/NET/cpan-uri/rt/ticket/66276>, <http://purl.org/NET/cpan-uri/rt/ticket/66278>, <http://purl.org/NET/cpan-uri/rt/ticket/79463>;
-	doap-deps:runtime-requirement [ doap-deps:on "Inline::Java"^^doap-deps:CpanId ], [ doap-deps:on "XML::LibXML 1.60"^^doap-deps:CpanId ];
+	doap-deps:runtime-requirement [ doap-deps:on "perl 5.008000"^^doap-deps:CpanId ], [ doap-deps:on "Inline::Java"^^doap-deps:CpanId ], [ doap-deps:on "XML::LibXML 1.60"^^doap-deps:CpanId ];
 	doap-deps:test-requirement [ doap-deps:on "Test::More 0.61"^^doap-deps:CpanId ];
 	doap:bug-database    <http://rt.cpan.org/Dist/Display.html?Queue=XML-Saxon-XSLT2>;
 	doap:category        [ rdfs:label "XSL transformations" ], [ rdfs:label "XSLT" ], [ rdfs:label "Java" ];
@@ -25,7 +25,7 @@
 	doap:maintainer      <http://tobyinkster.co.uk/#i>;
 	doap:name            "XML-Saxon-XSLT2";
 	doap:programming-language "Perl";
-	doap:release         <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-001>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-002>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-003>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-004>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-005>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-006>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-007>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-008>;
+	doap:release         <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-001>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-002>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-003>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-004>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-005>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-006>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-007>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-008>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-009>;
 	doap:repository      [
 		a doap:GitRepository;
 		doap:browse <https://github.com/tobyink/p5-xml-saxon-xslt2>;
@@ -152,6 +152,28 @@
 	doap:file-release    <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/XML-Saxon-XSLT2-0.008.tar.gz>;
 	doap:revision        "0.008"^^xsd:string.
 
+<http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-009>
+	a                    doap:Version;
+	dc:identifier        "XML-Saxon-XSLT2-0.009"^^xsd:string;
+	dc:issued            "2014-09-15"^^xsd:date;
+	doap-changeset:changeset [
+		doap-changeset:item [
+			rdfs:label "Add `/usr/local/share/java/classes/saxon9he.jar` to the list of paths where Saxon may be found.";
+			doap-changeset:thanks <http://purl.org/NET/cpan-uri/person/srezic>;
+			rdfs:comment "For FreeBSD";
+			rdfs:seeAlso <http://purl.org/NET/cpan-uri/rt/ticket/98875>;
+		];
+	];
+	doap-changeset:released-by <http://purl.org/NET/cpan-uri/person/tobyink>;
+	doap:file-release    <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/XML-Saxon-XSLT2-0.009.tar.gz>;
+	doap:revision        "0.009"^^xsd:string.
+
+<http://purl.org/NET/cpan-uri/person/srezic>
+	a                    foaf:Person;
+	doap:name            "Slaven Rezić";
+	foaf:nick            "SREZIC";
+	foaf:page            <https://metacpan.org/author/SREZIC>.
+
 <http://purl.org/NET/cpan-uri/rt/ticket/60584>
 	a                    doap-bugs:Issue;
 	rdfs:label           "mismatch Manifest";
@@ -242,6 +264,11 @@
 		foaf:mbox <mailto:mail@tobyinkster.co.uk>;
 	];
 	doap-bugs:status     <http://purl.org/NET/cpan-uri/rt/status/resolved>.
+
+<http://purl.org/NET/cpan-uri/rt/ticket/98875>
+	a                    doap-bugs:Issue;
+	doap-bugs:id         "98875"^^xsd:string;
+	doap-bugs:page       <https://rt.cpan.org/Ticket/Display.html?id=98875>.
 
 <http://tobyinkster.co.uk/#i>
 	a                    foaf:Person;
