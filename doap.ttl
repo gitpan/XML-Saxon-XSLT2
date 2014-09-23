@@ -25,7 +25,7 @@
 	doap:maintainer      <http://tobyinkster.co.uk/#i>;
 	doap:name            "XML-Saxon-XSLT2";
 	doap:programming-language "Perl";
-	doap:release         <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-001>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-002>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-003>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-004>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-005>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-006>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-007>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-008>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-009>;
+	doap:release         <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-001>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-002>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-003>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-004>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-005>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-006>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-007>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-008>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-009>, <http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-010>;
 	doap:repository      [
 		a doap:GitRepository;
 		doap:browse <https://github.com/tobyink/p5-xml-saxon-xslt2>;
@@ -167,6 +167,20 @@
 	doap-changeset:released-by <http://purl.org/NET/cpan-uri/person/tobyink>;
 	doap:file-release    <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/XML-Saxon-XSLT2-0.009.tar.gz>;
 	doap:revision        "0.009"^^xsd:string.
+
+<http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/v_0-010>
+	a                    doap:Version;
+	dc:identifier        "XML-Saxon-XSLT2-0.010"^^xsd:string;
+	dc:issued            "2014-09-23"^^xsd:date;
+	doap-changeset:changeset [
+		doap-changeset:item [
+			rdfs:label "Add `/usr/local/share/java/classes/saxon9he.jar` to Makefile.PL too.";
+			rdfs:comment "For FreeBSD";
+		];
+	];
+	doap-changeset:released-by <http://purl.org/NET/cpan-uri/person/tobyink>;
+	doap:file-release    <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/XML-Saxon-XSLT2-0.010.tar.gz>;
+	doap:revision        "0.010"^^xsd:string.
 
 <http://purl.org/NET/cpan-uri/person/srezic>
 	a                    foaf:Person;

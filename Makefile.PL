@@ -10,7 +10,7 @@ my $meta = {
                         "TOBYINK <tobyink\@cpan.org>",
                       ],
   "dynamic_config" => 1,
-  "generated_by"   => "Dist::Inkt::Profile::TOBYINK version 0.021, CPAN::Meta::Converter version 2.140640",
+  "generated_by"   => "Dist::Inkt::Profile::TOBYINK version 0.023, CPAN::Meta::Converter version 2.140640",
   "keywords"       => ["Java", "XSL transformations", "XSLT"],
   "license"        => ["perl_5"],
   "meta-spec"      => {
@@ -27,7 +27,7 @@ my $meta = {
                         test => { requires => { "Test::More" => 0.61 } },
                       },
   "provides"       => {
-                        "XML::Saxon::XSLT2" => { file => "lib/XML/Saxon/XSLT2.pm", version => 0.009 },
+                        "XML::Saxon::XSLT2" => { file => "lib/XML/Saxon/XSLT2.pm", version => "0.010" },
                       },
   "release_status" => "stable",
   "resources"      => {
@@ -43,7 +43,7 @@ my $meta = {
                                         },
                         x_identifier => "http://purl.org/NET/cpan-uri/dist/XML-Saxon-XSLT2/project",
                       },
-  "version"        => 0.009,
+  "version"        => "0.010",
   "x_contributors" => ["TOBYINK"],
 };
 
@@ -52,9 +52,10 @@ do {
 unless (-e '/usr/share/java/saxon9he.jar'
     or  -e '/usr/local/share/java/saxon9he.jar'
     or  -e '/usr/share/java/saxonb.jar'
-    or  -e '/usr/local/share/java/saxonb.jar')
+    or  -e '/usr/local/share/java/saxonb.jar'
+    or  -e '/usr/local/share/java/classes/saxon9he.jar')
 {
-	warn "Need saxon9he.jar or saxonb.jar to be installed in /usr/share/java or /usr/local/share/java.";
+	warn "Need saxon9he.jar or saxonb.jar to be installed in /usr/share/java or /usr/local/share/java or /usr/local/share/java/classes.";
 	exit 0;
 }
 

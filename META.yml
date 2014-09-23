@@ -8,7 +8,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: '6.17'
 dynamic_config: 1
-generated_by: 'Dist::Inkt::Profile::TOBYINK version 0.021, CPAN::Meta::Converter version 2.140640'
+generated_by: 'Dist::Inkt::Profile::TOBYINK version 0.023, CPAN::Meta::Converter version 2.140640'
 keywords:
   - Java
   - 'XSL transformations'
@@ -29,7 +29,7 @@ optional_features: {}
 provides:
   XML::Saxon::XSLT2:
     file: lib/XML/Saxon/XSLT2.pm
-    version: '0.009'
+    version: '0.010'
 requires:
   Inline::Java: '0'
   XML::LibXML: '1.60'
@@ -40,6 +40,6 @@ resources:
   homepage: https://metacpan.org/release/XML-Saxon-XSLT2
   license: http://dev.perl.org/licenses/
   repository: git://github.com/tobyink/p5-xml-saxon-xslt2.git
-version: '0.009'
+version: '0.010'
 x_contributors:
   - TOBYINK

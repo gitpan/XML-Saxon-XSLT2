@@ -11,7 +11,7 @@ use Scalar::Util qw[blessed];
 use XML::LibXML;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.009';
+our $VERSION   = '0.010';
 
 my $classpath;
 
